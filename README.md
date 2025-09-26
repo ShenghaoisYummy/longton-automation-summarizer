@@ -1,6 +1,7 @@
 # Automation Summarizer Backend
 
-Minimal starter scaffold for the Longton Legal workflow summarizer. The layout keeps the codebase small while leaving clear seams for scaling into more services later.
+Minimal Node.js + TypeScript scaffold for the Longton Legal workflow summarizer. The layout keeps the
+codebase small while leaving clear seams for scaling into more services later.
 
 ## Directory Layout
 
@@ -12,13 +13,20 @@ Minimal starter scaffold for the Longton Legal workflow summarizer. The layout k
   - `shared/` – shared utilities (config, persistence, logging)
 - `tests/` – mirrors `src/` with unit and integration tests per domain
 - `migrations/` – database migrations and seed helpers
-- `infra/` – IaC, deployment manifests, and operational scripts
+- `infra/` – Terraform or deployment manifests when ready
 - `docs/` – architecture notes, runbooks, and prompt guidelines
+
+## Tooling
+
+- TypeScript compiler (`tsc`) targets Node 18+ with strict settings.
+- Vitest handles unit tests; coverage is pre-configured.
+- ESLint with `@typescript-eslint` rules keeps shared code clean.
+- `.env.example` tracks required secrets and cadence defaults.
 
 ## Next Steps
 
-1. Pick the primary runtime (Node.js/TypeScript or Python/FastAPI) and initialize dependencies.
+1. Install dependencies (`npm install`) and wire CI to run `npm test` and `npm run lint`.
 2. Define the canonical data models and create the first migration.
-3. Stub Actionstep ingestion and summarization flows with integration tests.
-4. Hook CI to lint, test, and validate migrations.
+3. Flesh out Actionstep ingestion and summarization flows with contract/integration tests.
+4. Add observability glue (logging/tracing metrics) before broadening the feature set.
 
