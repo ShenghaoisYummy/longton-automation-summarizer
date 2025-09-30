@@ -1,0 +1,12 @@
+# Node.js artifacts
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.local
+
+# Misc
+.DS_Store
+coverage/
+*.log
