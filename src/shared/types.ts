@@ -102,5 +102,5 @@ export interface InvoiceEmail {
 
 export interface InvoiceSummaryResponse {
   summary: InvoiceSummary;
-  email: InvoiceEmail;
+  email: InvoiceEmail | null;
 }
